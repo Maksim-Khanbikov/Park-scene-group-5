@@ -166,7 +166,7 @@ def tree_two(x,y):
     tree.circle(16)
     tree.end_fill()
 
-tree_two(300, -200)
+
 
 
 
