@@ -308,4 +308,190 @@ def xmas_tree():
         tree.right(72-120)
         
     tree.end_fill()
+
+walkersize = 0.5
+walker_colors = ["gray", "green", "brown"]
+walker = trtl.Turtle()
+
+
+def draw_legs():
+  #dog walker's left leg
+  walker.setheading(260)
+  walker.fillcolor(walker_colors[0])
+  walker.forward(19*walkersize)
+  walker.begin_fill()
+  walker.forward(16*walkersize)
+  walker.right(10)
+  walker.forward(25*walkersize)
+  walker.circle(10*walkersize,180)
+  walker.forward(25*walkersize)
+  walker.left(10)
+  walker.forward(15*walkersize)
+  
+  #dog walker's right leg
+  walker.right(145)
+  walker.forward(26*walkersize)
+  walker.right(10)
+  walker.forward(16*walkersize)
+  walker.circle(10*walkersize,180)
+  walker.forward(16*walkersize)
+  walker.left(10)
+  walker.forward(26*walkersize)
+  walker.right(25)
+  walker.end_fill()
+
+def head():
+  walker.fillcolor(walker_colors[1])
+  walker.begin_fill()
+  walker.forward(40*walkersize)
+  for i in range(10):
+    walker.forward(2*walkersize)
+    walker.left(5)
+  walker.right(110)
+  walker.circle(20*walkersize,300)
+  walker.right(120)
+  for i in range(10):
+    walker.forward(2*walkersize)
+    walker.left(6)
+  walker.forward(44*walkersize)
+  walker.penup()
+  walker.left(90)
+  walker.forward(38*walkersize)
+  walker.left(90)
+  walker.end_fill()
+  
+  
+def arms():
+  #walker's right arm
+  walker.begin_fill()
+  walker.forward(45*walkersize)
+  walker.left(90)
+  walker.forward(25*walkersize)
+  walker.pendown()
+  walker.left(50)
+  walker.forward(20*walkersize)
+  walker.left(15)
+  walker.forward(30*walkersize)
+  walker.circle(9*walkersize,180)
+  walker.forward(30*walkersize)
+  walker.right(15)
+  walker.forward(20*walkersize)
+
+  #walker's left arm
+  walker.right(90)
+  walker.penup()
+  walker.forward(10*walkersize)
+  walker.pendown()
+  walker.left(15)
+  walker.forward(20*walkersize)
+  walker.circle(9*walkersize,180)
+  walker.forward(30*walkersize)
+  walker.end_fill()
+
+def leash():
+  walker.right(180)
+  walker.penup()
+  walker.forward(30*walkersize)
+  for i in range(14):
+    walker.forward(1*walkersize)
+    walker.right(6)
+  walker.left(90)
+  walker.pendown()
+  walker.forward(95*walkersize)
+
+def dog_walker():
+  #draw walker's legs
+  draw_legs()
+
+  #walker's head
+  head()
+  
+  #walker's arms
+  arms()
+  
+  #draw dog leash
+  leash()
+
+#draw dog walker
+dog_walker()
+
+def tail():
+  walker.fillcolor(walker_colors[2])
+  walker.begin_fill()
+  walker.right(165)
+  walker.forward(60*walkersize)
+  walker.circle(10*walkersize,60)
+  walker.right(130)
+  walker.forward(20*walkersize)
+  walker.circle(3*walkersize,175)
+  walker.forward(30*walkersize)
+
+def front_leg():
+  walker.left(90)
+  walker.penup()
+  walker.forward(10*walkersize)
+  walker.right(180)
+  walker.pendown()
+  walker.forward(20*walkersize)
+  walker.circle(6*walkersize,180)
+  walker.forward(20*walkersize)
+  walker.right(180)
+  walker.forward(10*walkersize)
+
+def back_leg():
+  walker.left(90)
+  walker.forward(5*walkersize)
+  walker.right(90)
+  walker.forward(10*walkersize)
+  walker.circle(6*walkersize,180)
+  walker.forward(10*walkersize)
+  walker.left(90)
+  walker.forward(12*walkersize)
+  walker.right(180)
+  walker.penup()
+  walker.forward(12*walkersize)
+  walker.pendown()
+  
+def dog_head():
+  walker.circle(20*walkersize,60)
+  walker.right(60)
+  walker.forward(15*walkersize)
+  walker.circle(5*walkersize,170)
+  walker.forward(5*walkersize)
+  walker.right(50)
+  walker.circle(15*walkersize,70)
+  walker.right(65)
+  walker.forward(10*walkersize)
+  walker.circle(2*walkersize,120)
+  walker.forward(10*walkersize)
+  walker.right(80)
+  walker.circle(15*walkersize,40)
+  walker.forward(5*walkersize)
+  walker.end_fill()
+
+def dog():
+  
+  #tail
+  tail()
+  
+  #legs/underside
+  walker.right(30)
+  walker.circle(10*walkersize,110)
+  
+  front_leg()
+  
+  back_leg()
+  
+  walker.forward(20*walkersize)
+  
+  front_leg()
+  
+  back_leg()
+  
+  #head
+  dog_head()
+
+#draw dog
+dog()
+
 wn.mainloop()
