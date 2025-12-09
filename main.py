@@ -756,8 +756,8 @@ tree_one(150, -250)
 tree_two(100, 20)
 tree_three(300, -200)
 
-"""
-# Kyuhyun - Dip & pull up bars 
+
+# Kyuhyun - Dip & pull up bars, moving baseketball 
 # Make turtle object 
 t = trtl.Turtle()
 
@@ -812,6 +812,35 @@ dip_bar(1,0,0)
 dip_bar(1,50,0)
 t.hideturtle()
 
+# Set color mode and import random number generator 
+trtl.colormode(255)
+import random 
+
+# Moving basketball 
+def basketball(angle,distance,x,y):
+  # Make turtle object 
+  b = trtl.Turtle()
+  b.shape("circle")
+  b.turtlesize(2)
+  
+  # 1/10 chance to get blue ball 
+  if random.randint(1,10) > 9: 
+    b.color(3, 252, 227)
+  else:
+    b.color(252, 98, 3) 
+  
+  #Basketball animation 
+  b.penup()
+  b.goto(x,y)
+  b.setheading(angle)
+  lengths = [1,4,9,16]
+  for length in lengths:
+    b.forward(length)
+  for i in range(distance):
+    b.forward(1)
+
+basketball(0,200,0,0) 
+
 
 #draw benches
 bench.penup()
@@ -849,5 +878,5 @@ walker.hideturtle()
 car()
 
 
-
-wn.mainloop()
+wn = turtle.Screen() 
+wn.mainloop() 
