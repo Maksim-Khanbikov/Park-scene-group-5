@@ -749,12 +749,13 @@ def dog():
   
   #head
   dog_head()
-"""
+
 #draw trees
-tree_one(-300,45)
-tree_one(200, -100)
-tree_two(250, 50)
-tree_three(-250, 45)
+tree_one(-300,40)
+tree_one(150, -250)
+tree_two(100, 20)
+tree_three(300, -200)
+
 """
 # Kyuhyun - Dip & pull up bars 
 # Make turtle object 
@@ -820,12 +821,18 @@ bench.right(30)
 bench.pendown()
 draw_bench()
 bench.penup()
-bench.goto(-10,-110)
+bench.goto(15,-110)
 bench.setheading(0)
 bench.right(45)
 bench.pendown()
 draw_bench()
-
+bench.penup()
+bench.goto(65,-150)
+bench.setheading(0)
+bench.right(65)
+bench.pendown()
+draw_bench()
+bench.hideturtle()
 
 #draw dog walker
 walker.penup()
@@ -837,6 +844,7 @@ dog_walker()
 #draw dog
 dog()
 
+walker.hideturtle()
 #draw car
 car()
 
